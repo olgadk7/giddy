@@ -24,8 +24,8 @@ def get_posts_df(stock_name, stock_ticker):
     df_noNan = df_noNan.rename(columns={'selftext': 'text'})
 
     # This will return a DataFrame containing only the rows where the posts "title" and "text" column contains "GameStop"
-    posts = df_noNan[(df_noNan['title'].str.contains(stock_name) | df_noNan['title'].str.contains(stock_ticker) |
-                             df_noNan['text'].str.contains(stock_name) | df_noNan['text'].str.contains(stock_ticker))]
+    posts = df_noNan[(df_noNan['title'].str.contains(stock_name, case=False) | df_noNan['title'].str.contains(stock_ticker, case=False) |
+                             df_noNan['text'].str.contains(stock_name, case=False) | df_noNan['text'].str.contains(stock_ticker, case=False))]
     print("Stock data only: ", posts.shape)
 
     posts['date'] = pd.to_datetime(df_noNan['created_utc'], unit='s')
@@ -45,7 +45,7 @@ def get_stock_prices(ticker, start_date, end_date):
 
     df = df.reset_index()
 
-    print(df.shape)
+    # print(df.shape)
     
     return df
 

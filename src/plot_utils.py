@@ -56,7 +56,7 @@ def plot_total_keywords_counts(posts_df, price_df):
 
     fig = go.Figure(data=[trace1, trace2, trace3, trace4, trace5], layout=layout)
 
-    fig.write_html('giddy_mentions_total_keywords_counts.html', auto_open=True)
+    # fig.write_html('giddy_mentions_total_keywords_counts.html', auto_open=True)
 
     # Show the plot
     fig.show()
@@ -114,7 +114,7 @@ def plot_total_keyword_percentage(posts_df, price_df, annotations=None):
     # Show the plot
     fig.show()
 
-    fig.write_html('giddy_mentions_total_keyword_percentage.html', auto_open=True)
+    # fig.write_html('giddy_mentions_total_keyword_percentage.html', auto_open=True)
 
 
 
@@ -196,4 +196,4 @@ def plot_per_keyword_percentages(per_keyword_df, price_df):
 
     fig.show()
 
-    fig.write_html('giddy_mentions_breakdown.html', auto_open=True)
+    # fig.write_html('giddy_mentions_breakdown.html', auto_open=True)
